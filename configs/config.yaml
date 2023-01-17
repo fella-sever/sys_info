@@ -1,0 +1,58 @@
+# VPN settings
+
+# ip address in vpn network to ping
+# format: string <10.0.0.1>
+privateNetwork: 10.0.0.2
+
+# ping -c arg
+# format: int <3>
+pingTimesForVpn: 3
+# enable vpn service reboot timer "vpnRebootTimeout" if "privateNetwork" is down
+# format: bool <true/false>
+rebootWhilePrivateFail: true
+# time before reboot if "privateNetwork" is unreachable
+# format: int in seconds <10>
+vpnRebootTimeout: 30
+
+
+# Global network behaviour settings
+
+# ip address with port to check out global internet connection
+# format: string <8.8.8.8>
+globalNetwork: "8.8.8.8"
+# port for testing "globalNetwork"
+# format: int32 <8080>
+globalNetworkPort: 80
+# time before hard reboot if "globalNetwork" is unreachable
+# format: int in seconds <10>
+globalRebootTimeout: 30
+# enable hard reboot timer "globalRebootTimeout" if "globalNetwork" is down
+# format: bool <true/false>
+rebootWhileGlobalFail: true
+
+
+
+
+#sys-info modules with settings
+
+### ps_util module for getting info about host system
+ps_util:
+  # boolean true/false
+  enabled: true
+  host:
+    host_all: true
+    hostname: true
+    uptime: true
+    procs: true
+    os: true
+    platform: true
+    platform_family: true
+    platform_version: true
+    virt_system: true
+    virt_role: true
+
+
+
+
+
+
